@@ -2,7 +2,7 @@ let weather = {
     apiKey: "9db917e3684abaf1e87e4ce8896f814a", //API KEY
     fetchWeather: function (city) {
       fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +  //wheater API
+        "https://api.openweathermap.org/data/2.5/weather?q=" +  //wheater API   API For weather data + data format 
           city +
           "&units=metric&appid=" +
           this.apiKey
@@ -17,7 +17,7 @@ let weather = {
         })
         .then((data) => this.displayWeather(data));
     },
-    displayWeather: function (data) {
+    displayWeather: function (data) {  //here we have queries for taking certain type of data from the API
       const { name } = data;
       const { icon, description } = data.weather[0];
       const { temp, humidity } = data.main;
